@@ -568,7 +568,7 @@ def main():
             train_dataset = train_dataset.select(range(max_train_samples))
 
     if training_args.do_eval:
-        if "test" not in raw_datasets:
+        if "test" not in raw_datasets and "test_matched" not in raw_datasets:
             raise ValueError("--do_eval requires a validation dataset")
         eval_dataset = raw_datasets[
             "test_matched" if data_args.task_name == "mnli" else "test"
