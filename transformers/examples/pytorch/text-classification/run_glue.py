@@ -571,7 +571,7 @@ def main():
         if "test" not in raw_datasets:
             raise ValueError("--do_eval requires a validation dataset")
         eval_dataset = raw_datasets[
-            "validation_matched" if data_args.task_name == "mnli" else "test"
+            "test_matched" if data_args.task_name == "mnli" else "test"
         ]
         if data_args.max_eval_samples is not None:
             max_eval_samples = min(len(eval_dataset), data_args.max_eval_samples)
