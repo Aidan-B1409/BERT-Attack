@@ -553,8 +553,8 @@ def main():
         return result
 
     print(raw_datasets["test"])
-    print(raw_datasets["test"].features["label"].min())
-    print(raw_datasets["test"].features["label"].max())
+    print(raw_datasets["test"].features["label"])
+    print(raw_datasets["train"].features["label"])
     with training_args.main_process_first(desc="dataset map pre-processing"):
         raw_datasets = raw_datasets.map(
             preprocess_function,
